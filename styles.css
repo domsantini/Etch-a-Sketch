@@ -1,3 +1,26 @@
+body {
+    min-height: 100vh;
+}
+
 h1 {
     text-align: center;
+}
+
+.etchContainer {
+    margin: auto;
+    width: 510px;
+    height: 510px;
+    border: 1px solid gray;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    
+}
+
+.etchContainer > div {
+    flex-grow: 1;
+    min-height: 0;
+    min-width: 0;
+    border: 0.5px solid gray;
 }
