@@ -1,6 +1,8 @@
-let grid = 50;
+
 let height = width = 510;
 let fragment = document.createDocumentFragment();
+let slider = document.querySelector('.slider');
+let grid = parseInt(slider.value);
 
 function generateGrid(grid, fragment) {
     const etchContainer = document.querySelector('.etchContainer');
@@ -17,4 +19,14 @@ function generateGrid(grid, fragment) {
     etchContainer.appendChild(fragment);
 }
 
+function clearGrid(fragment) {
+    
+}
+
+slider.addEventListener('change', () => {
+    generateGrid(grid, fragment);
+})
+
 generateGrid(grid, fragment);
+
+console.log(typeof parseInt(slider.value));

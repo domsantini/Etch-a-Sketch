@@ -1,11 +1,9 @@
 body {
     min-height: 100vh;
 }
-
 h1 {
     text-align: center;
 }
-
 .etchContainer {
     margin: auto;
     width: 510px;
@@ -17,7 +15,6 @@ h1 {
     align-content: center;
     
 }
-
 .etchContainer > div {
     flex-grow: 1;
     min-height: 0;
