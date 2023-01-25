@@ -1,12 +1,10 @@
-
 let height = width = 510;
 let fragment = document.createDocumentFragment();
 let slider = document.querySelector('.slider');
 let grid = parseInt(slider.value);
+const etchContainer = document.querySelector('.etchContainer');
 
 function generateGrid(grid, fragment) {
-    const etchContainer = document.querySelector('.etchContainer');
-    
     for (let i = 0; i < grid; i++) {        
         for (let j = 0; j < grid; j++) {
             let div = document.createElement('div');
@@ -19,14 +17,14 @@ function generateGrid(grid, fragment) {
     etchContainer.appendChild(fragment);
 }
 
-function clearGrid(fragment) {
+// Slider ready, need to implement clearGrid();
+// slider.addEventListener('change', (e) => {
     
-}
+//     console.log(typeof e.target.valueAsNumber);
+//     // clearGrid();
+//     // generateGrid(grid, fragment);
+// });
 
-slider.addEventListener('change', () => {
-    generateGrid(grid, fragment);
-})
-
-generateGrid(grid, fragment);
-
-console.log(typeof parseInt(slider.value));
+// generateGrid(grid, fragment);
+// console.log(etchContainer);
+// console.log(Array.from(etchContainer.childNodes));

@@ -19,5 +19,10 @@ h1 {
     flex-grow: 1;
     min-height: 0;
     min-width: 0;
-    border: 0.5px solid gray;
+    border: 1px solid gray;
+}
+.controls {
+    padding: 20px;
+    justify-content: center;
+    display: flex;
 }
