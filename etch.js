@@ -1,8 +1,10 @@
 let height = width = 510;
 let fragment = document.createDocumentFragment();
 let slider = document.querySelector('.slider');
-let grid = parseInt(slider.value);
+// let grid = parseInt(slider.value);
+let grid = 25;
 const etchContainer = document.querySelector('.etchContainer');
+const button = document.querySelector('button');
 
 function generateGrid(grid, fragment) {
     for (let i = 0; i < grid; i++) {        
@@ -25,6 +27,22 @@ function generateGrid(grid, fragment) {
 //     // generateGrid(grid, fragment);
 // });
 
-// generateGrid(grid, fragment);
-// console.log(etchContainer);
-// console.log(Array.from(etchContainer.childNodes));
+generateGrid(grid, fragment);
+
+function clearGrid() {
+    const gridArray = Array.from(etchContainer.childNodes);
+    gridArray.forEach((div) => {
+        div.remove('div');
+    })
+    
+    return 'gridArray';
+}
+
+button.addEventListener('click', () => {
+    clearGrid();
+})
+
+console.log(button);
+console.log(etchContainer.childNodes);
+console.log(Array.from(etchContainer.childNodes));
+
