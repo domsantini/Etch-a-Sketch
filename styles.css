@@ -1,7 +1,8 @@
-body {
+html {
     min-height: 100vh;
 }
 h1 {
+    margin: 20px;
     text-align: center;
 }
 .etchContainer {
@@ -22,7 +23,7 @@ h1 {
     border: 1px solid gray;
 }
 .controls {
-    padding: 20px;
-    justify-content: center;
+    margin: 20px;
     display: flex;
+    justify-content: center;
 }

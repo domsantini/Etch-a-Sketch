@@ -1,14 +1,13 @@
-let height = width = 510;
+const height = width = 510;
 let fragment = document.createDocumentFragment();
 let slider = document.querySelector('.slider');
 let grid = parseInt(slider.value);
-// let grid = 25;
 const etchContainer = document.querySelector('.etchContainer');
-const button = document.querySelector('button');
+const sliderValue = document.querySelector('span');
+const inputSlider = document.querySelector('input');
 
-console.log(grid);
 
-function generateGrid(grid, fragment) {
+function generateGrid() {
     for (let i = 0; i < grid; i++) {        
         for (let j = 0; j < grid; j++) {
             let div = document.createElement('div');
@@ -21,22 +20,29 @@ function generateGrid(grid, fragment) {
     etchContainer.appendChild(fragment);
 }
 
-// Slider ready, need to implement clearGrid();
+// Can swap 'change' event for an 'input' event to make grid size dynamically
 slider.addEventListener('change', (e) => {
-    console.log(grid);
     clearGrid();
     grid = e.target.valueAsNumber;
-    console.log(grid);
-    generateGrid(grid, fragment);
+    generateGrid();
 });
-
-generateGrid(grid, fragment);
-console.log(fragment);
 
 function clearGrid() {
     const gridArray = Array.from(etchContainer.childNodes);
     gridArray.forEach((div) => {
         div.remove('div');
     })
-}
+};
 
+inputSlider.oninput = (() => {
+    let value = inputSlider.value;
+    sliderValue.textContent = value;
+    sliderValue.style.left = (value/2) + '%';
+    sliderValue.classList.add('show');
+})
+
+inputSlider.onblur = (() => {
+    sliderValue.classList.remove('show');
+})
+
+generateGrid();
