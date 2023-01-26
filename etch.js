@@ -4,8 +4,7 @@ let slider = document.querySelector('.slider');
 let grid = parseInt(slider.value);
 const etchContainer = document.querySelector('.etchContainer');
 const sliderValue = document.querySelector('span');
-const inputSlider = document.querySelector('input');
-
+const inputSlider = document.querySelector('input.slider');
 
 function generateGrid() {
     for (let i = 0; i < grid; i++) {        
@@ -14,6 +13,7 @@ function generateGrid() {
             div.style.height = `${(height - (grid * 2))  / grid}px`;
             div.style.width = `${(height - (grid * 2))  / grid}px`;
             div.classList = 'square';
+            div.onclick 
             fragment.appendChild(div);
         }
     }
@@ -37,12 +37,8 @@ function clearGrid() {
 inputSlider.oninput = (() => {
     let value = inputSlider.value;
     sliderValue.textContent = value;
-    sliderValue.style.left = (value/2) + '%';
-    sliderValue.classList.add('show');
-})
-
-inputSlider.onblur = (() => {
-    sliderValue.classList.remove('show');
-})
+    console.log(value);
+});
 
 generateGrid();
+
