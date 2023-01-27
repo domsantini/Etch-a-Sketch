@@ -5,7 +5,8 @@ let grid = parseInt(slider.value);
 const etchContainer = document.querySelector('.etchContainer');
 const sliderValue = document.querySelector('span');
 const inputSlider = document.querySelector('input.slider');
-const color = document.querySelector('input[type=color]')
+const color = document.querySelector('input[type=color]');
+let isDragging = false;
 
 function generateGrid() {
     for (let i = 0; i < grid; i++) {        
@@ -14,7 +15,23 @@ function generateGrid() {
             div.style.height = `${(height - (grid * 2))  / grid}px`;
             div.style.width = `${(height - (grid * 2))  / grid}px`;
             div.classList = 'square';
-            div.onclick = function() { changeColor(this, color) };
+            // div.onmousedown = function() { changeColor(this) };
+            div.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                e.target.style.backgroundColor = color.value;
+                
+            })
+            
+            div.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    e.target.style.backgroundColor = color.value;    
+                }
+            })
+            
+            div.addEventListener('mouseup', (e) => {
+                isDragging = false;
+            })
+            
             fragment.appendChild(div);
         }
     }
@@ -40,10 +57,8 @@ inputSlider.oninput = (() => {
     sliderValue.textContent = value;
 });
 
-generateGrid();
-
-function changeColor(element, color) {
+function changeColor(element) {
     element.style.backgroundColor = color.value;
-    console.log(color.value);
 }
 
+generateGrid();
