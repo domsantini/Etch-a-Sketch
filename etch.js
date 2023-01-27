@@ -19,7 +19,6 @@ function generateGrid() {
             div.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 e.target.style.backgroundColor = color.value;
-                
             })
             
             div.addEventListener('mousemove', (e) => {
