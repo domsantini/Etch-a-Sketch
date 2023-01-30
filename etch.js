@@ -6,7 +6,9 @@ const etchContainer = document.querySelector('.etchContainer');
 const sliderValue = document.querySelector('span');
 const inputSlider = document.querySelector('input.slider');
 const color = document.querySelector('input[type=color]');
+const trash = document.querySelector('.trash');
 let isDragging = false;
+
 
 function generateGrid() {
     for (let i = 0; i < grid; i++) {        
@@ -54,6 +56,13 @@ function clearGrid() {
 inputSlider.oninput = (() => {
     let value = inputSlider.value;
     sliderValue.textContent = value;
+});
+
+trash.addEventListener('click', () => {
+    const gridArray = Array.from(etchContainer.childNodes);
+    gridArray.forEach((div) => {
+        div.style.backgroundColor = '#FFFFFF';
+    })
 });
 
 function changeColor(element) {
