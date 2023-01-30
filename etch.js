@@ -7,6 +7,7 @@ const sliderValue = document.querySelector('span');
 const inputSlider = document.querySelector('input.slider');
 const color = document.querySelector('input[type=color]');
 const trash = document.querySelector('.trash');
+const eraser = document.querySelector('.eraser');
 let isDragging = false;
 
 
@@ -57,6 +58,10 @@ inputSlider.oninput = (() => {
     let value = inputSlider.value;
     sliderValue.textContent = value;
 });
+
+eraser.addEventListener('click', () => {
+    color.value = '#FFFFFF';
+})
 
 trash.addEventListener('click', () => {
     const gridArray = Array.from(etchContainer.childNodes);
