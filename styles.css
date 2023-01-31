@@ -1,22 +1,28 @@
-html {
-    min-height: 100vh;
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 h1 {
     margin: 20px;
     text-align: center;
 }
 .etchContainer {
-    margin: auto;
+    
+    margin: 0px auto;
     width: 510px;
     height: 510px;
-    border: 1px solid gray;
+    border: 5px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px gray;
     
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    
 }
 .etchContainer > div {
+    position: relative;
     flex-grow: 1;
     min-height: 0;
     min-width: 0;
@@ -26,18 +32,25 @@ div .square:hover {
     background: lightblue;
 }
 .controls {
-    margin: 20px 189px;;
+    margin: 30px 300px;
+    
+    padding: 10px 10px;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 6px 6px 5px gray;
+    
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 25px;
 }
 input[type='color'] {
     appearance: none;
     background: none;
     border: none;
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     
 }
 input[type='color']::-webkit-color-swatch {
@@ -53,6 +66,9 @@ input[type='color']::-webkit-color-swatch {
     
 }
 .controls > img {
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
+}
+footer {
+    margin: 10px auto;
 }

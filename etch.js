@@ -66,7 +66,7 @@ eraser.addEventListener('click', () => {
 trash.addEventListener('click', () => {
     const gridArray = Array.from(etchContainer.childNodes);
     gridArray.forEach((div) => {
-        div.style.backgroundColor = '#FFFFFF';
+        div.style.backgroundColor = '';
     })
 });
 
