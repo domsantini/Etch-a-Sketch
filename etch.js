@@ -7,7 +7,9 @@ const sliderValue = document.querySelector('.slideNum');
 const inputSlider = document.querySelector('input.slider');
 const color = document.querySelector('input[type=color]');
 const trash = document.querySelector('.trash');
+const trashHover = document.querySelector('.trashHover');
 const eraser = document.querySelector('.eraser');
+const eraserHover = document.querySelector('.eraserHover');
 let isDragging = false;
 
 
@@ -58,18 +60,18 @@ inputSlider.oninput = (() => {
     let value = inputSlider.value;
     sliderValue.textContent = value;
     // FOLLOW UP ON THIS
-    sliderValue.style.left = (value * 2)+ '%';
+    sliderValue.style.left = (value * 2) + '%';
     sliderValue.classList.add("show");
 });
 inputSlider.onmouseup = (()=> {
     sliderValue.classList.remove("show");
 });
 
-eraser.addEventListener('click', () => {
+eraserHover.addEventListener('click', () => {
     color.value = '#FFFFFF';
 })
 
-trash.addEventListener('click', () => {
+trashHover.addEventListener('click', () => {
     const gridArray = Array.from(etchContainer.childNodes);
     gridArray.forEach((div) => {
         div.style.backgroundColor = '';

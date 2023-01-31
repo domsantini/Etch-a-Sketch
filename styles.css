@@ -68,13 +68,33 @@ input[type='color']::-webkit-color-swatch {
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.controls > img {
+.eraserContainer, 
+.trashContainer {
     height: 30px;
     width: 30px;
     flex-shrink: 0;
 }
+.eraserContainer > img, 
+.trashContainer > img {
+    width: 100%;
+    height: auto;
+}
+.eraserContainer img:nth-child(2),
+.trashContainer img:nth-child(2) {
+    display: none;
+}
+.eraserContainer:hover img:nth-child(1),
+.trashContainer:hover img:nth-child(1) {
+    display: none;
+}
+.eraserContainer:hover img:nth-child(2),
+.trashContainer:hover img:nth-child(2) {
+    display: block;
+}
 footer {
     margin: 10px auto;
+    display: flex;
+    gap: 10px;
 }
 footer > a {
     color: inherit;
@@ -89,9 +109,9 @@ footer > a:hover {
     height: 100%;
     text-align: center;
     place-items: center;
-    /* border: 2px solid black; */ 
+    
 }
-  .sliderValue{
+.sliderValue{
     position: relative;
     width: 100%;
 }
@@ -100,8 +120,9 @@ footer > a:hover {
     height: 35px;
     width: 35px;
     color: white;
-    font-weight: 500;
-    top: -40px;
+    font-family: 'Varela Round';
+    font-weight: 400;
+    top: -37px;
     transform: translateX(-50%) scale(0);
     transform-origin: bottom; 
     transition: transform 0.3s ease-in-out;
@@ -109,10 +130,7 @@ footer > a:hover {
     /* Line-height moves the text w/in pop-up bubble. Increasing height moves text down. 0px is at very top */
     line-height: 45px;
     z-index: 2;
-    
-    
-    /* text-align: center; */
-  }
+}
 .sliderValue span.show{
     transform: translateX(-50%) scale(1);
 }
@@ -121,9 +139,9 @@ footer > a:hover {
     content: '';
     height: 35px;
     width: 35px;
-    background: red;
+    background: lightblue;
     transform: translateX(-50%) rotate(45deg);
-    border: 3px solid black;
+    border: 2px solid black;
     z-index: -1;
     left: 50%;
     border-top-left-radius: 50%;
@@ -139,13 +157,13 @@ footer > a:hover {
     height: 100%;
     position: relative;
 }
-  .field .value{
+.field .value{
     position: absolute;
     font-size: 18px;
     color: #664AFF;
     font-weight: 600;
-  }
-  .range input{
+}
+.range input{
     appearance: none;
     width: 100%;
     height: 3px;
@@ -154,13 +172,15 @@ footer > a:hover {
     outline: none;
     border: none;
     z-index: 2222;
-  }
-  .range input::-webkit-slider-thumb{
+    transform: translateY(-7px);
+    
+}
+.range input::-webkit-slider-thumb{
     appearance: none;
     width: 15px;
     height: 15px;
-    background: red;
+    background: lightblue;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 2px solid black;
     cursor: pointer;
-  }
+}
