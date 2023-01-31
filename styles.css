@@ -64,7 +64,7 @@ input[type='color'] {
     flex-shrink: 0;
 }
 input[type='color']::-webkit-color-swatch {
-    border: none;
+    border: 2px solid black;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -94,6 +94,7 @@ input[type='color']::-webkit-color-swatch {
 footer {
     margin: 10px auto;
     display: flex;
+    justify-content: center;
     gap: 10px;
 }
 footer > a {
