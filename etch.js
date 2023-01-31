@@ -61,7 +61,7 @@ inputSlider.oninput = (() => {
     sliderValue.style.left = (value * 2)+ '%';
     sliderValue.classList.add("show");
 });
-inputSlider.onblur = (()=> {
+inputSlider.onmouseup = (()=> {
     sliderValue.classList.remove("show");
 });
 
