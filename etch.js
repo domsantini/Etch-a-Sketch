@@ -3,7 +3,7 @@ let fragment = document.createDocumentFragment();
 let slider = document.querySelector('.slider');
 let grid = parseInt(slider.value);
 const etchContainer = document.querySelector('.etchContainer');
-const sliderValue = document.querySelector('span');
+const sliderValue = document.querySelector('.slideNum');
 const inputSlider = document.querySelector('input.slider');
 const color = document.querySelector('input[type=color]');
 const trash = document.querySelector('.trash');
@@ -57,6 +57,12 @@ function clearGrid() {
 inputSlider.oninput = (() => {
     let value = inputSlider.value;
     sliderValue.textContent = value;
+    // FOLLOW UP ON THIS
+    sliderValue.style.left = (value * 2)+ '%';
+    sliderValue.classList.add("show");
+});
+inputSlider.onblur = (()=> {
+    sliderValue.classList.remove("show");
 });
 
 eraser.addEventListener('click', () => {
